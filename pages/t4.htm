@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="do.sibsutis.ru">
+
+  <title>Тема 4. Конспект лекций</title>
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+  <!-- Bootstrap Core CSS -->
+  <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+  <!-- Custom CSS -->
+  <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+ <div class="container">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+   <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	 
+	 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+   </button>
+	 
+   <a class="navbar-brand " href="../index.htm"> 
+  <text class = "hidden-xs">Архитектура телекоммуникационных систем и сетей</text> 
+  <text class = "visible-xs">Архитектура телекоммуникационных систем и сетей</text>
+	 </a>
+  </div>
+
+  <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+   
+	 <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+   </ul> -->
+	
+   <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	   
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+     <ul class="dropdown-menu">
+    <li><a href="../index.htm">Аннотация курса</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="lec_index.htm">Теория</a></li>
+      <li><a href="c_work.htm">Курсовая работа</a></li>
+      <li><a href="labs.htm">Лабораторные работы</a></li>
+     
+      <li role="separator" class="divider"></li>
+    
+      <li><a href="lit.htm">Литература</a></li>
+      <!--li><a href="q.htm">Вопросы для самопроверки</a></li-->			
+     </ul>
+ </li>
+ </ul>
+  </div><!-- /.navbar-collapse -->
+ </div><!-- /.container-fluid -->
+</nav>
+
+
+  <div id="intro" class="section content-section ">
+    <div class="container">
+       <div class="row">
+        <div class="col-lg-12">	
+
+
+<!-- содержание -->	
+<div class="page-header">				
+<h3><a href="#">Тема 4. Структура системы передачи 
+    дискретных сообщений</a></h3>
+
+</div>
+<!--начало-->
+  <p>  Структурная схема системы 
+          ПДС изображена на рис.1 Источник и получатель сообщений вместе с преобразователем 
+          сообщения в сигнал в состав системы ПДС не входят. </P>
+        <p><B><a href="images/Image82.gif">Рисунок 
+          1. </a></b><a href="images/Image82.gif" target="_blank">Структурная 
+          схема системы передачи дискретных сообщений</a> </P>
+        <p> <U><B>Кодер источника.</b></u> 
+          Сообщение, поступающее от источника сообщений, в ряде случаев содержит 
+          избыточность. Это обусловлено тем, что символы <IMG SRC="images/Image83.gif" WIDTH=44 HEIGHT=21 align="top">, 
+          входящие в сообщение, могут быть статистически связаны. Это позволяет 
+          часть сообщения не передавать, восстанавливая его на приеме по известной 
+          статистической связи. </P>
+        <p> Избыточность приводит к тому, 
+          что за заданный промежуток времени будет передано меньше сообщений, 
+          и, следовательно, менее эффективно будет использоваться канал передачи 
+          дискретных сообщений. Задачу устранения избыточности на передаче в СПДС 
+          выполняет кодер источника. </P>
+        <p> <U><B>Кодер канала.</b></u> 
+          С целью повышения верности передачи используется избыточное кодирование, 
+          позволяющее на приеме обнаруживать или даже исправлять ошибки. </P>
+        <p> В процессе кодирования осуществляется 
+          преобразование исходной кодовой комбинации в другую кодовую комбинацию 
+          с избыточностью. На приемном конце декодер канала осуществляет обратное 
+          преобразование (декодирование), в результате которого получаем комбинацию 
+          исходного кода. Часто <B><I>кодер и декодер канала </i></B>называют 
+          устройствами защиты от ошибок (УЗО). </P>
+        <p> <U><B>Устройство преобразования 
+          сигнала.</b></u> С целью согласования кодера канала и декодера канала 
+          с непрерывным каналом связи используются на передаче и приеме устройства 
+          преобразования сигналов (УПС). В частном случае это модулятор и демодулятор. </P>
+        <P><b><u>Каналы.</u></b> </P>
+        <p> <U><B>Непрерывный канал.</b></u> 
+          Это канал связи предназначенный для передачи непрерывных (аналоговых) 
+          сигналов. Например, абонентская телефонная линия, канал ТЧ. </P>
+        <p> <U><B>Дискретный канал.</b></u> 
+          Совместно с каналом связи УПС образуют дискретный канал, то есть канал, 
+          предназначенный для передачи только дискретных сигналов (цифровых сигналов 
+          данных). </P>
+        <p> Различают <B><I><U>синхронные 
+          и асинхронные дискретные каналы</u></i></B>.  </P>
+        <p> В <B><I>синхронных </i></B>дискретных 
+          каналах ввод каждого единичного элемента производится в строго определенные 
+          моменты времени и они предназначены для передачи только изохронных сигналов. 
+           </P>
+        <p> По <B><I>асинхронному </i></B>каналу 
+          можно передавать любые сигналы - изохронные, анизохронные.  </P>
+        <p> <U><B>Расширенный канал.</b></u> 
+          Дискретный канал в совокупности с кодером и декодером канала (УЗО) называется 
+          расширенным дискретным каналом (РДК).  </P>
+        <p> В технике передачи данных РДК 
+          называют <B><I>каналом передачи данных</i></B>. </P>
+        <p><b><u>Полунепрерывный канал 
+          (дискретный канал непрерывного времени).</u></b> </P>
+        <p> В системе ПДС иногда выделяют 
+          дискретный канал непрерывного времени. </P>
+        <p> Для определения выхода данного 
+          канала необходимо более детально рассмотреть УПС приема. Он состоит 
+          из демодулятора, порогового устройства и регенератора. Выход ПУ одновременно 
+          является и выходом дискретного канала непрерывного времени.  </P>
+        <p> Если на выходе дискретного 
+          канала имеем сигнал, являющийся дискретной функцией дискретного времени, 
+          то на выходе полунепрерывного канала сигнал является дискретной функцией 
+          непрерывного времени. (Он же канал постоянного тока). </P>
+        <p> <u><b>Контрольные вопросы по теме: </b></u></P>
+  
+     
+        <p> 1.Нарисуйте структурную схему 
+          системы передачи дискретных сообщений.   <br>
+          2. Поясните назначение и основные функции каждого блока структурной 
+          схемы. <br>
+           3. Перечислите какие каналы выделяются в составе 
+          общей структурной
+
+<br><br>
+<!--конец-->
+      
+				
+
+				</div>
+			</div>
+			
+      </div>
+    </div>
+  </div>
+	
+	<!--Меню навигации по Темам -->	
+	<div aria-label="..." class = "nav-menu">
+	 <ul class="pager background-transition-slow">
+		 <li title="Наверх" style = "margin-right:15px;	"><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top"></a></li>
+		 <li title="К предыдущей лекции"><a class = "glyphicon glyphicon-menu-left page-scroll" href="t3.htm"></a></li>
+		 <li title="В содержание"><a class = "glyphicon glyphicon-list-alt" href="lec_index.htm"></a></li>
+		 <li title="К следующей лекции"><a class = "glyphicon glyphicon-menu-right page-scroll" href="t5.htm"></a></li>
+	 </ul>
+	</div>
+	<!---->
+	
+	</div>
+  <!-- jQuery -->
+  <script src="../lib/js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="../lib/js/bootstrap.min.js"></script>
+
+  <!-- Scrolling Nav JavaScript -->
+  <script src="../lib/js/jquery.easing.min.js"></script>
+  <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>

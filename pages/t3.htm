@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="do.sibsutis.ru">
+
+  <title>Тема 3. Конспект лекций</title>
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+  <!-- Bootstrap Core CSS -->
+  <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+  <!-- Custom CSS -->
+  <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+ <div class="container">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+   <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	 
+	 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+   </button>
+	 
+   <a class="navbar-brand " href="../index.htm"> 
+  <text class = "hidden-xs">Архитектура телекоммуникационных систем и сетей</text> 
+  <text class = "visible-xs">Архитектура телекоммуникационных систем и сетей</text>
+	 </a>
+  </div>
+
+  <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+   
+	 <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+   </ul> -->
+	
+   <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	   
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+     <ul class="dropdown-menu">
+    <li><a href="../index.htm">Аннотация курса</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="lec_index.htm">Теория</a></li>
+      <li><a href="c_work.htm">Курсовая работа</a></li>
+      <li><a href="labs.htm">Лабораторные работы</a></li>
+     
+      <li role="separator" class="divider"></li>
+    
+      <li><a href="lit.htm">Литература</a></li>
+      <!--li><a href="q.htm">Вопросы для самопроверки</a></li-->			
+     </ul>
+ </li>
+ </ul>
+  </div><!-- /.navbar-collapse -->
+ </div><!-- /.container-fluid -->
+</nav>
+
+
+  <div id="intro" class="section content-section ">
+    <div class="container">
+       <div class="row">
+        <div class="col-lg-12">	
+
+
+<!-- содержание -->	
+<div class="page-header">				
+<h3><a href="#">Тема 3. Виды аналоговой модуляции</a></h3>
+
+</div>
+<!--начало-->
+   <P><strong>Перенос сигнала из 
+          одной точки пространства в другую осуществляет система электросвязи. 
+          Электрический сигнал является, по сути, формой представления сообщения 
+          для передачи его системой электросвязи.</strong>  </P>
+        <p> Источник сообщения (рис. 3.1) 
+          формирует сообщение а(t), которое с помощью специальных устройств преобразуется 
+          в электрический сигнал s(t).   </P>
+        <p><strong>Чтобы передать сигнал 
+          в системе электросвязи, нужно воспользоваться каким-либо переносчиком. 
+          В качестве переносчика естественно использовать те материальные объекты, 
+          которые имеют свойство перемещаться в пространстве. Таким образом, в 
+          пункте передачи (рис. 3.1) первичный сигнал s(t) необходимо преобразовать 
+          в сигнал v(t), удобный для его передачи по соответствующей среде распространения. 
+          В пункте приема выполняется обратное преобразование. В отдельных случаях 
+          (например, когда средой распространения является пара физических проводов, 
+          как в городской телефонной связи) указанное преобразование сигнала может 
+          отсутствовать.</strong>  </P>
+        <p> Доставленный в пункт приема 
+          сигнал должен быть снова преобразован в сообщение (например, с помощью 
+          телефона или громкоговорителя при передаче речи, электронно-лучевой 
+          трубки при передаче изображения, приемной части телеграфного аппарата 
+          при передаче телеграммы) и затем передан получателю.  </P>
+        <P> <a href="images/Image54.gif" target="_blank">Рис.3.1. 
+          Система электросвязи</a>  </P>
+        <p> Передача информации всегда 
+          сопровождается неизбежным действием помех и искажений. Это приводит 
+          к тому, что сигнал на выходе системы электросвязи <em>s%(t)</em> и принятое 
+          сообщение <em>a%(t)</em> могут в какой-то мере отличаться от сигнала 
+          на входе s(t) и переданного сообщения a(t). Степень соответствия принятого 
+          сообщения называют верностью передачи информации.  </P>
+        <p>Для различных сообщений 
+          качество их передачи оценивается по-разному. Принятое телефонное сообщение 
+          должно быть достаточно разборчивым, абонент должен быть узнаваемым. 
+            </P>
+        <p><b>Понятие модуляции</b>  </P>
+        <p> Обычно в качестве переносчика 
+          используют гармоническое колебание высокой частоты: <IMG SRC="images/Image57.gif" WIDTH=196 HEIGHT=26 align="middle">.&#9;(3.1)  </P>
+        <p> Это колебание полностью характеризуется 
+          тремя параметрами: амплитудой V, частотой &#119; и начальной фазой &#106; 
+          .  </P>
+        <p> Модуляция применяется для преобразования 
+          первичных сигналов электросвязи во вторичные и обратно. Процесс преобразования 
+          первичного сигнала заключается в изменении одного или нескольких параметров 
+          несущего колебания по закону изменения первичного сигнала и называется 
+          модуляцией.  </P>
+        <p> Амплитудная модуляция  </P>
+        <p> Если под действием первичного 
+          сигнала изменяется амплитуда &#117;    <SUB>0</SUB>(t), 
+          то модуляция называется амплитудной.   </P>
+        <p></P>
+        <P> <IMG SRC="images/Image58.gif" WIDTH=434 HEIGHT=418>  </P>
+        <P></P>
+        <P>Рис. 3.2. Передаваемый сигнал 
+          (а), несущее колебание (б) и модулированный сигнал (в)  </P>
+        <p> На рис. 3.2 показана форма 
+          передаваемого сигнала (а), несущего колебания до модуляции (б) и модулированного 
+          по амплитуде несущего колебания (в).  </P>
+        <p> Спектр амплитудно-модулированного 
+          колебания (или АМ-колебания) состоит из частоты несущего колебания и 
+          двух боковых частот, симметричных относительно несущей, с одинаковыми 
+          амплитудами (рис. 3.3, б). Спектр первичного сигнала s(t) приведен на 
+          рис. 3.3, а.  </P>
+        <p>Если первичный сигнал сложный 
+          и его спектр ограничен частотами <IMG SRC="images/Image59.gif" WIDTH=44 HEIGHT=25 align="top"> 
+          и <IMG SRC="images/Image60.gif" WIDTH=46 HEIGHT=25 align="top"> (рис. 
+          3.3, в), то спектр АМ-колебания будет состоять из несущего колебания 
+          и двух боковых полос, симметричных относительно несущей (рис.3.3, г). 
+            </P>
+
+        <P><a href="images/img3_3.gif" target="_blank">Рис. 
+          3.3. Спектры синусоидального (а) и сложного (в) сигналов и модулированных 
+          ими по амплитуде несущих колебаний (б и г)</a>  </P>
+        <p><b>Угловая модуляция</b>  </P>
+        <p> Можно изменять во времени не 
+          амплитуду, а частоту несущего колебания:  </P>
+        <p> &#9;<IMG SRC="images/Image61.gif" WIDTH=308 HEIGHT=26 align="top">,&#9;(3.2)  </P>
+        <p> где <IMG SRC="images/Image62.gif" WIDTH=38 HEIGHT=26 align="middle"> 
+          – коэффициент пропорциональности; величина <IMG SRC="images/Image63.gif" WIDTH=45 HEIGHT=20 align="middle"> 
+          <IMG SRC="images/Image64.gif" WIDTH=69 HEIGHT=26 align="middle"> – называется девиацией 
+          частоты (фактически это максимальное отклонение частоты модулированного 
+          сигнала от частоты несущего колебания).  </P>
+        <p>Такой вид модуляции называется 
+          частотной модуляцией. На рис.3.4 показано изменение частоты несущего 
+          колебания при частотной модуляции.  </P>
+        <p> При изменении фазы несущего 
+          колебания получим фазовую модуляцию  </P>
+        <p> &#9;<IMG SRC="images/Image65.gif" WIDTH=306 HEIGHT=26 align="middle">,&#9;(3.3)  </P>
+        <p>где <IMG SRC="images/Image66.gif" WIDTH=41 HEIGHT=26 align="middle"> 
+          – коэффициент пропорциональности; <IMG SRC="images/Image67.gif" WIDTH=117 HEIGHT=26 align="middle"><IMG SRC="images/Image68.gif" WIDTH=70 HEIGHT=25 align="middle"> 
+          – индекс фазовой модуляции.  </P>
+        <p>Между частотной и фазовой 
+          модуляцией существует тесная связь.  </P>
+        <P><img src="images/img3_4.gif" width="441" height="295">  </P>
+        <P>Рис.3.4.Исходный (а) и частотно-модулированный 
+          (б) сигналы  </P>
+        <p>Представим несущие колебание 
+          в виде:  </P>
+        <p> &#9;<IMG SRC="images/Image69.gif" WIDTH=312 HEIGHT=26 align="middle">,&#9;(3.4)  </P>
+        <p> где &#106; – начальная фаза 
+          колебания, а &#89; (t) – его полная фаза. Между фазой &#89; (t) и частотой 
+          &#119; существует связь:  </P>
+        <p> &#9;<IMG SRC="images/Image70.gif" WIDTH=178 HEIGHT=57 align="bottom">.&#9;(3.5)  </P>
+        <p> Подставим в (3.5) выражение 
+          (3.2) для &#119; (t) при частотной модуляции:  </P>
+        <p> &#9;<IMG SRC="images/Image71.gif" WIDTH=250 HEIGHT=26>.  </P>
+        <p> Величина <IMG SRC="images/Image72.gif" WIDTH=120 HEIGHT=25 align="middle"> 
+          называется индексом частотной модуляции.  </P>
+        <p> Частотно-модулированное колебание 
+          запишется в виде:  </P>
+        <p> &#9;<IMG SRC="images/Image73.gif" WIDTH=308 HEIGHT=28 align="middle">.&#9;(3.6)  </P>
+        <p> Фазо-модулированное колебание 
+          с учетом (3.3) для &#106; (t) следующее:  </P>
+        <p> &#9;<IMG SRC="images/Image74.gif" WIDTH=313 HEIGHT=28 align="middle">.&#9;(3.7)  </P>
+        <p> Из сравнения (3.6) и (3.7) 
+          следует, что по внешнему виду сигнала v(t) трудно различить, какая модуляция 
+          применена – частотная или фазовая. Часто оба эти вида модуляции называют 
+          угловой модуляцией, а М<SUB>ЧМ</SUB> и М<SUB>ФМ</SUB> – индексами угловой 
+          модуляции.  </P>
+        <p> Несущее колебание, подвергнутое 
+          угловой модуляции (3.6) или (3.7), можно представить в виде суммы гармонических 
+          колебаний:  </P>
+        <p> &#9;<IMG SRC="images/Image75.gif" WIDTH=416 HEIGHT=110>  </P>
+        <p> Здесь М – индекс угловой модуляции, 
+          принимающий значение М<SUB>ЧМ</SUB> при ЧМ и М<SUB>ФМ</SUB> при ФМ. 
+          Амплитуды гармоник в этом выражении определяются некоторыми коэффициентами 
+          <IMG SRC="images/Image76.gif" WIDTH=68 HEIGHT=28 align="middle">, значения которых 
+          при различных аргументах приводятся в специальных справочных таблицах. 
+          Чем больше М, тем шире спектр модулированного колебания.  </P>
+        <p> Таким образом, спектр модулированной 
+          несущей при угловой модуляции даже при гармоническом первичном сигнале 
+          s(t) состоит из бесконечного числа дискретных составляющих, образующих 
+          нижнюю и верхнюю боковые полосы спектра, симметричные относительно несущей 
+          частоты и имеющие одинаковые амплитуды (рис. 3.5).  </P>
+        <P><img src="images/img3_5.gif" width="526" height="185"></P>
+        <P>Рис.3.5.Спектр частотно-модулированного 
+          сигнала  </P>
+        <p> В случае, если первичный сигнал 
+          s(t) имеет форму, отличную от синусоидальной, и занимает полосу частот 
+          от <IMG SRC="images/Image77.gif" WIDTH=44 HEIGHT=25 align="top"> до <IMG SRC="images/Image78.gif" WIDTH=46 HEIGHT=25 align="top">, 
+          то спектр модулированного колебания при угловой модуляции будет иметь 
+          еще более сложный вид.  </P>
+        <p>  Различие ЧМ и ФМ сигналов  </P>
+        <p> <IMG SRC="images/Image79.gif" WIDTH=551 HEIGHT=170>  </P>
+        <p></P>
+        <p> Рис.3.6 Различие ЧМ и ФМ сигналов.  </P>
+        <p> При ЧМ, когда &#98;   
+           &#62;    &#62; 1, 
+          изменение &#87; практически не влияет &#87;    <SUB>s</SUB> 
+          (действительную ширину спектра). Спектры сигналов ЧМ при различных значениях 
+          &#87; приведены на рис. 3.7. Изменение амплитуды модулирующей функции 
+          вызывает пропорциональное изменение индекса модуляции как при ЧМ, так 
+          и при ФМ, а значит, и изменение ширины спектра. это иллюстрируется на 
+          рис.3.8.  </P>
+        <p> <IMG SRC="images/Image80.gif" WIDTH=527 HEIGHT=516>  </P>
+        <p>рис.3.7 Спектры сигналов ЧМ 
+          при различных значениях модулирующей частоты &#937;=&#916;&#969;/&#946; 
+          (&#916;&#969;=const)  </P>
+        <p></P>
+        <p>&nbsp;</P>
+        <p> <IMG SRC="images/Image81.gif" WIDTH=420 HEIGHT=434>  </P>
+        <p>Рис.3.8 Спектры сигналов угловой 
+          модуляции при различных значениях индекса модуляции &#946;(&#937;=const)  </P>
+
+        <p> Сравнение различных видов непрерывной 
+          модуляции позволяет выявить их особенности. При амплитудной модуляции 
+          ширина спектра модулированного сигнала, как правило, значительно меньше, 
+          чем при угловой модуляции (частотной и фазовой). Таким образом, налицо 
+          экономия частотного спектра: для амплитудно-модулированных сигналов 
+          можно отводить при передаче более узкую полосу частот.  </P>
+        <p>Помехоустойчивость разных 
+          видов модуляции различна. При прочих равных условиях помехоустойчивость 
+          ЧМ больше, чем АМ, а помехоустойчивость ФМ больше, чем ЧМ. Однако сложность 
+          реализации приемных устройств данных видов модуляции имеет такое же 
+          соотношение.  </P>
+        <p><b>Контрольные вопросы</b>  </P>
+        <OL>
+          <LI> Какова структура устройства передачи сообщений? 
+              </LI>
+          <LI>В чем состоит принцип амплитудной (частотной, 
+            фазовой) модуляции?   </LI>
+          <LI>Различия и сходство ЧМ и ФМ?  </LI>
+        </OL>
+
+<br><br>
+<!--конец-->
+      
+				
+
+				</div>
+			</div>
+			
+      </div>
+    </div>
+  </div>
+	
+	<!--Меню навигации по Темам -->	
+	<div aria-label="..." class = "nav-menu">
+	 <ul class="pager background-transition-slow">
+		 <li title="Наверх" style = "margin-right:15px;	"><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top"></a></li>
+		 <li title="К предыдущей лекции"><a class = "glyphicon glyphicon-menu-left page-scroll" href="t2.htm"></a></li>
+		 <li title="В содержание"><a class = "glyphicon glyphicon-list-alt" href="lec_index.htm"></a></li>
+		 <li title="К следующей лекции"><a class = "glyphicon glyphicon-menu-right page-scroll" href="t4.htm"></a></li>
+	 </ul>
+	</div>
+	<!---->
+	
+	</div>
+  <!-- jQuery -->
+  <script src="../lib/js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="../lib/js/bootstrap.min.js"></script>
+
+  <!-- Scrolling Nav JavaScript -->
+  <script src="../lib/js/jquery.easing.min.js"></script>
+  <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="do.sibsutis.ru">
+
+  <title>Тема 12. Конспект лекций</title>
+	
+	<link rel="icon" type="image/png" href="../lib/css/favicon.png">
+  <!-- Bootstrap Core CSS -->
+  <link href="../lib/css/bootstrap.css" rel="stylesheet">
+	
+  <!-- Custom CSS -->
+  <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+ <div class="container">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+   <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+	 
+	 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+   </button>
+	 
+   <a class="navbar-brand " href="../index.htm"> 
+  <text class = "hidden-xs">Архитектура телекоммуникационных систем и сетей</text> 
+  <text class = "visible-xs">Архитектура телекоммуникационных систем и сетей</text>
+	 </a>
+  </div>
+
+  <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+   
+	 <!-- <ul class="nav navbar-nav">
+		<li><a href="#"></a></li> 
+   </ul> -->
+	
+   <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+		<button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>	   
+		<a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+     <ul class="dropdown-menu">
+    <li><a href="../index.htm">Аннотация курса</a></li>
+      <li role="separator" class="divider"></li>
+      <li><a href="lec_index.htm">Теория</a></li>
+      <li><a href="c_work.htm">Курсовая работа</a></li>
+      <li><a href="labs.htm">Лабораторные работы</a></li>
+     
+      <li role="separator" class="divider"></li>
+    
+      <li><a href="lit.htm">Литература</a></li>
+      <!--li><a href="q.htm">Вопросы для самопроверки</a></li-->			
+     </ul>
+ </li>
+ </ul>
+  </div><!-- /.navbar-collapse -->
+ </div><!-- /.container-fluid -->
+</nav>
+
+
+  <div id="intro" class="section content-section ">
+    <div class="container">
+       <div class="row">
+        <div class="col-lg-12">	
+
+
+<!-- содержание -->	
+<div class="page-header">				
+<h3><a href="#">Тема 12. Принципы разделения 
+    каналов</a></h3>
+
+
+</div>
+<!--начало-->
+   <P><B><IMG SRC="images/Image357.gif" WIDTH=468 HEIGHT=166></b><br>
+          рис.12.1. упрощенная структура МСП</P>
+        <P>Пропускная способность линии 
+          связи может значительно превышать пропускную способность необходимую 
+          для организации одного канала. В данной ситуации для повышения эффективности 
+          целесообразно использовать многоканальные системы передачи(МСП). Многоканальная 
+          система обеспечивает передачу по одной физической цепи большого числа 
+          каналов. На рисунке 12.1 показана упрощенная структура МСП.  </P>
+        <P> Передающая и приемная станции 
+          S<SUB>1</SUB>…S<SUB>N</SUB> – индивидуальные сигналы с помощью модуляторов 
+          на передающей станции преобразуются М<SUB>1…</SUB>М<SUB>N</SUB> в канальные 
+          сигналы УО – устройство объединения. </P>
+        <P> u(t) – групповой сигнал, 
+          который передается по линии передачи, РУ – разделяющее устройство, U<SUB>1</SUB>…U<SUB>N</SUB> 
+          c помощью демодуляторов Д<SUB>1</SUB>…Д<SUB>N</SUB> преобразуются в 
+          информационные каналы S<SUB>1</SUB>…S<SUB>N</SUB>. </P>
+        <P> Чаще всего используют частотный 
+          и временной способы разделения каналов (ЧРК и ВРК). </P>
+         <P></P>
+         <P> <b>Частотное разделение 
+          каналов</b> </P>
+        <P>  Один из способов разделения 
+          канальных сигналов (или разделения каналов) заключается в следующем. 
+          В качестве переносчиков выбирают гармонические несущие колебания с различными 
+          частотами. В результате каждый первичный сигнал после преобразования 
+          в канальный сигнал (т.е. после модуляции) будет размещаться в своей 
+          полосе частот. В качестве примера на рис. 2.3 показано преобразование 
+          N первичных сигналов, имеющих одинаковые спектры, путем модуляции по 
+          амплитуде (АМ) несущих колебаний с различными частотами. Интервал между 
+          несущими частотами соседних каналов должен быть таким, чтобы полосы 
+          частот канальных сигналов не перекрывались.  </P>
+         <P> <IMG SRC="images/Image358.gif" WIDTH=534 HEIGHT=185><br>
+          Рис. 12.2. Многоканальная система передачи с частотным разделением каналов </P>
+        <P></P>
+        <P> На рис. 12.2 представлена 
+          структурная схема многоканальной системы передачи. Первичные сигналы 
+          s<SUB>1</SUB>(t), s<SUB>2</SUB>(t), ..., s<SUB>N</SUB>(t) преобразуются 
+          устройствами М<SUB>1</SUB>, М<SUB>2</SUB>, ..., М<SUB>N</SUB>. модулированные 
+          несущие колебания v<SUB>1</SUB>(t), v<SUB>2</SUB>(t), ..., v<SUB>N</SUB>(t), 
+          полученные на выходе этих устройств, называются канальными сигналами. 
+          В отличие от первичных сигналов, имеющих общий спектр, канальные разнесены 
+          по спектру (рис. 12.3). Групповой сигнал v(t) получается объединением 
+          канальных сигналов v<SUB>1</SUB>(t), v<SUB>2</SUB>(t), ..., v<SUB>N</SUB>(t) 
+          в устройстве объединения (УО). </P>
+         <P>  <a href="images/Image359.gif" target="_blank">Рис. 
+          12.3. Преобразование первичных сигналов в канальные</a> </P>
+        <P> Самым распространенным 
+          методом формирования канальных сигналов является метод формирования 
+          одной боковой. </P>
+        <P> Можно передавать одну боковую 
+          полосу, так как она уже содержит всю информацию об исходном сигнале. 
+           </P>
+        <P><IMG SRC="images/Image360.gif" WIDTH=272 HEIGHT=117><br>При 
+          этом методе происходит лишь перемещение сигнала по шкале частот, поэтому 
+          этот метод получил название “преобразование частот” </P>
+        <P></P>
+        <P> Преимуществами этого метода 
+          являются: узкая полоса частот канального сигнала; так как несущая не 
+          передается, энергия тратится лишь на передачу одной боковой полосы. </P>
+        <P> Необходимость восстановления 
+          несущей на приеме ведет к изменению спектра на величину &#8710;&#969;, 
+          что ухудшает качество передаваемой информации. Так же недостатком является 
+          сложность подавления несущей и второй боковой полосы на передающей станции. 
+           </P>
+        <P>На приемном конце канальные 
+          сигналы выделяются из группового с помощью разделительных частотных 
+          фильтров Ф<SUB>1</SUB>, Ф<SUB>2</SUB>,&nbsp;..., Ф<SUB>N</SUB>, пропускающих 
+          сигналы своего канала и подавляющих остальные. Восстановление первичных 
+          сигналов <img src="images/Image361.gif" width="171" height="28" align="absmiddle"><img src="images/Image362.gif" width="64" height="25" align="absmiddle"> 
+          из канальных <img src="images/Image363.gif" width="244" height="27" align="absmiddle">производится 
+          с помощью демодуляторов Д<SUB>1</SUB>, Д<SUB>2</SUB>, ..., Д<SUB>N</SUB>. </P>
+         <P> <b>Временное разделение 
+          каналов</b> </P>
+         <P></P>
+         <P> <IMG SRC="images/Image364.gif" WIDTH=499 HEIGHT=183> </P>
+         <P> Рис. 12.4. Многоканальная 
+          система передачи с временным <BR>
+          разделением каналов </P>
+        <P></P>
+        <P>В основе лежит теорема Котельникова: 
+          любой сигнал, имеющий непрерывный спектр и ограниченный F<SUB>в </SUB>может 
+          быть представлен в виде отчетов на передаче и затем восстановлен на 
+          приеме со сколь угодно малой погрешностью, если частота отчетов F<SUB>д 
+          </SUB>&#8805; 2F<SUB>в</SUB>.  </P>
+        <P>При ВРК по цепи передаются 
+          периодические последовательности очень коротких импульсов, амплитуды 
+          которых равны величинам мгновенных значений канальных сигналов.  
+        </P>
+        <P>Исходные непрерывные сигналы 
+          каждого канала S<SUB>1</SUB>(t)&#247;S<SUB>N</SUB>(t) после ограничения 
+          по спектру фильтром нижних частот (ФНЧ) поступают на ключи ЭК<SUB>1</SUB>&#247;ЭК<SUB>N</SUB>, 
+          которые осуществляют дискретизацию этих сигналов. Работой ключей управляет 
+          генераторное оборудование (ГО) на передаче: оно вырабатывает периодическую 
+          последовательность импульсов с F<SUB>д</SUB>. Импульсные последовательности, 
+          управляющие работой ключей, сдвинуты друг от друга во времени на равные 
+          интервалы. Величина этих интервалов определяется временем дискретизации 
+          и количеством каналов. Таким образом, групповой сигнал представляет 
+          собой последовательность коротких импульсов.  </P>
+         <P> <IMG SRC="images/Image365.gif" WIDTH=429 HEIGHT=416> </P>
+         <P>  Рис. 12.5. Временной принцип 
+          объединения канальных <BR>
+          сигналов (<I>а</I>–<I>в</I>) в групповой (<I>г</I>) </P>
+         <P></P>
+        <P> На приемной стороне разделение 
+          исходных сигналов осуществляется с помощью канальных ключей ЭК<SUB>1</SUB>&#247;ЭК<SUB>N</SUB>. 
+          Работой ключей управляет последовательность импульсов от ГО на приеме. 
+          Для того, чтобы передоваемый сигнал поступил в соответствующий приемник 
+          необходимо, чтобы электронные ключи на приеме и передаче работали синхронно 
+          и синфазно. Для этого с передающей стороны на приемную передается синхросигнал. 
+          В том случае, если ключи будут работать не синфазно сигнал попадет не 
+          в тот приемник, а в приемник соседнего канала. При несинхронной работе 
+          ключей сигнал может вообще ни попасть ни в один из приемников. </P>
+        <P> Восстановление исходного 
+          сигнала на приеме осуществляется с помощью ФНЧ. Так как полоса пропускания 
+          ограниченна, то между каналами в групповом сигнале могут возникнуть 
+          взаимные переходные помехи. Для их уменьшения между канальными импульсами 
+          вводят защитный интервал T. </P>
+        <P><img src="images/Image366.gif" width="573" height="320"></P>
+        <P></P>
+        <P> Рис. 12.6. Сигналы 1-го канала (слева) 
+          и их спектры (справа) </P>
+        <P> <I>а</i> – первичный, <I>б</I> 
+          – импульсный переносчик, <I>в</I> – канальный АИМ сигнал </P>
+        <P> Контрольные вопросы</A> </P>
+        <OL>
+          <LI> В чем состоит принцип частотного разделения 
+            каналов? </LI>
+          <LI> Зачем используются фильтры в системах 
+            передачи с ЧРК? </LI>
+          <LI> В чем состоит принцип временного разделения 
+            каналов? </LI>
+          <LI> С помощью каких устройств выделяются 
+            исходные сигналы на приемной стороне в системе передачи с ВРК? </LI>
+        </OL>
+       
+<br><br>
+<!--конец-->
+      
+				
+
+				</div>
+			</div>
+			
+      </div>
+    </div>
+  </div>
+	
+	<!--Меню навигации по Темам -->	
+	<div aria-label="..." class = "nav-menu">
+	 <ul class="pager background-transition-slow">
+		 <li title="Наверх" style = "margin-right:15px;	"><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top"></a></li>
+		 <li title="К предыдущей лекции"><a class = "glyphicon glyphicon-menu-left page-scroll" href="t11.htm"></a></li>
+		 <li title="В содержание"><a class = "glyphicon glyphicon-list-alt" href="lec_index.htm"></a></li>
+		 <li title="К следующей лекции"><a class = "glyphicon glyphicon-menu-right page-scroll" href="t13.htm"></a></li>
+	 </ul>
+	</div>
+	<!---->
+	
+	</div>
+  <!-- jQuery -->
+  <script src="../lib/js/jquery.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="../lib/js/bootstrap.min.js"></script>
+
+  <!-- Scrolling Nav JavaScript -->
+  <script src="../lib/js/jquery.easing.min.js"></script>
+  <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>

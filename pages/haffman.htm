@@ -1,0 +1,1023 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+ <meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="description" content="">
+ <meta name="author" content="do.sibsutis.ru">
+
+ <title>Лабораторные работы. Архитектура телекоммуникационных систем и сетей</title>
+
+ <link rel="icon" type="image/png" href="../lib/css/favicon.png">
+ <!-- Bootstrap Core CSS -->
+ <link href="../lib/css/bootstrap.css" rel="stylesheet">
+
+ <!-- Custom CSS -->
+ <link href="../lib/css/scrolling-nav.css" rel="stylesheet">
+
+ <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+ <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+ <!--[if lt IE 9]>
+ <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+ <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+ <![endif]-->
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+ <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+ <div class="container">
+ <!-- Brand and toggle get grouped for better mobile display -->
+ <div class="navbar-header">
+ <li class="hidden"> <a class="page-scroll" href="#page-top"></a> </li>
+
+ <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ </button>
+
+ <a class="navbar-brand " href="../index.htm">
+ <text class = "hidden-xs">Архитектура телекоммуникационных систем и сетей</text>
+ <text class = "visible-xs">Архитектура телекоммуникационных систем и сетей</text>
+ </a>
+ </div>
+
+ <!-- Collect the nav links, forms, and glyphicon glyphicon-list-alt content for toggling -->
+ <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+ <!-- <ul class="nav navbar-nav">
+ <li><a href="#"></a></li>
+ </ul> -->
+
+ <ul class="nav navbar-nav navbar-right">
+ <li class="dropdown">
+ <button type="button" class="navbar-toggle dropdown-toggle hidden-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ </button>
+ <a class = "dropdown-toggle visible-xs" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Материалы</a>
+  
+ <ul class="dropdown-menu">
+  
+ <li><a href="../index.htm">Аннотация курса</a></li>
+  
+ <li role="separator" class="divider"></li>
+  
+ <li><a href="lec_index.htm">Теория</a></li>
+  
+<li><a href="c_work.htm">Курсовая работа</a></li>
+ 
+ <li><a href="labs.htm">Лабораторные работы</a></li>
+ 
+ <li role="separator" class="divider"></li>
+     
+   
+  <li><a href="lit.htm">Литература</a></li>
+  
+
+  <!--li><a href="q.htm">Вопросы для самопроверки</a></li-->			
+   </ul>
+ </li>
+ </ul>
+ </div><!-- /.navbar-collapse -->
+ </div><!-- /.container-fluid -->
+</nav>
+
+
+ <div id="intro" class="section content-section ">
+ 
+<div class="container">
+ <div class="row">
+ <div class="col-lg-12">
+
+ 
+ <div class="page-header">
+  <h3>Лабораторные работы </h3>
+ </div>
+
+
+<h2>ЭФФЕКТИВНОЕ КОДИРОВАНИЕ НА ПРИМЕРЕ КОДА ХАФФМЕНА</h2>
+
+ 
+  <P>(методические указания к практическим занятиям по курсу)</P>
+      
+        <h3>ОГЛАВЛЕНИЕ</h3>
+      <ol>
+        <li>ЦЕЛЬ РАБОТЫ  </li>
+         <li>ДОМАШНЕЕ ЗАДАНИЕ</li>
+         <li>КРАТКАЯ ТЕОРИЯ</li>
+         <li>ОПИСАНИЕ ЛАБОРАТОРНОЙ РАБОТЫ</li>
+         <li>ПОРЯДОК ВЫПОЛНЕНИЯ ЛАБОРАТОРНОЙ РАБОТЫ</li>
+         <li>КОНТРОЛЬНЫЕ ВОПРОСЫ</li>
+        <li>СОДЕРЖАНИЕ ОТЧЕТА</li>
+          <li>СПИСОК ЛИТЕРАТУРЫ</li>
+</ol>
+        <br>
+        <h3>ЦЕЛЬ РАБОТЫ</h3>
+     
+        <P>Изучение принципа эффективного
+          кодирования источника дискретных сообщений.</P>
+       
+        <h3>ДОМАШНЕЕ ЗАДАНИЕ</h3>
+       
+        <OL>
+       
+          <LI>Изучить принцип эффективного кодирования
+            источника дискретных сообщений (метод Хаффмена).</LI>
+          <p></P>
+         
+          <LI>Осуществить кодирование каждого сообщения
+            алфавита (см. таблицу 1), используя двоичный код:</LI>
+          <p></P>
+       
+        <UL>
+          
+            <LI>равномерный;</LI>
+            <p></P>
+            <LI>код Хаффмена, в соответствии с заданным
+              вариантом.</LI>
+            <p></P>
+         
+        </UL>
+        <P></P>
+        
+        <P>Таблица 1 Вероятности появления
+          сообщений алфавита</P>
+        
+        <TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=656>
+          <TR>
+            <TD WIDTH="13%" VALIGN="TOP" HEIGHT=54>   
+              <p> Вариант </P>
+              <P ALIGN="CENTER"> Знак  </TD>
+            <TD WIDTH="13%" VALIGN="TOP" HEIGHT=54>   
+              <P ALIGN="CENTER"> 1  </TD>
+            <TD WIDTH="13%" VALIGN="TOP" HEIGHT=54>   
+              <P ALIGN="CENTER"> 2  </TD>
+            <TD WIDTH="13%" VALIGN="TOP" HEIGHT=54>   
+              <P ALIGN="CENTER"> 3  </TD>
+            <TD WIDTH="13%" VALIGN="TOP" HEIGHT=54>   
+              <P ALIGN="CENTER"> 4  </TD>
+            <TD WIDTH="13%" VALIGN="TOP" HEIGHT=54>   
+              <P ALIGN="CENTER"> 5  </TD>
+            <TD WIDTH="13%" VALIGN="TOP" HEIGHT=54>   
+              <P ALIGN="CENTER"> 6  </TD>
+            <TD WIDTH="13%" VALIGN="TOP" HEIGHT=54>   
+              <P ALIGN="CENTER"> 7  </TD>
+          </TR>
+          <TR>
+            <TD WIDTH="13%" VALIGN="TOP" HEIGHT=34>   
+              <P ALIGN="CENTER"> <IMG SRC="labimg/Image466.gif" WIDTH=21 HEIGHT=30>  </TD>
+            <TD WIDTH="13%" VALIGN="TOP" HEIGHT=34>   
+              <P ALIGN="CENTER"> 0,20  </TD>
+            <TD WIDTH="13%" VALIGN="TOP" HEIGHT=34>   
+              <P ALIGN="CENTER"> 0,13  </TD>
+            <TD WIDTH="13%" VALIGN="TOP" HEIGHT=34>   
+              <P ALIGN="CENTER"> 0,04  </TD>
+            <TD WIDTH="13%" VALIGN="TOP" HEIGHT=34>   
+              <P ALIGN="CENTER"> 0,28  </TD>
+            <TD WIDTH="13%" VALIGN="TOP" HEIGHT=34>   
+              <P ALIGN="CENTER"> 0,37  </TD>
+            <TD WIDTH="13%" VALIGN="TOP" HEIGHT=34>   
+              <P ALIGN="CENTER"> 0,07  </TD>
+            <TD WIDTH="13%" VALIGN="TOP" HEIGHT=34>   
+              <P ALIGN="CENTER"> 0,01  </TD>
+          </TR>
+          <TR>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> <IMG SRC="labimg/Image467.gif" WIDTH=24 HEIGHT=30>  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,05  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,17  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,17  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,04  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,13  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,09  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,03  </TD>
+          </TR>
+          <TR>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> <IMG SRC="labimg/Image468.gif" WIDTH=22 HEIGHT=30>  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,17  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,04  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,14  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,16  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,17  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,01  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,16  </TD>
+          </TR>
+          <TR>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> <IMG SRC="labimg/Image469.gif" WIDTH=24 HEIGHT=30>  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,24  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,26  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,26  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,02  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,07  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,23  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,13  </TD>
+          </TR>
+          <TR>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> <IMG SRC="labimg/Image470.gif" WIDTH=22 HEIGHT=30>  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,28  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,15  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,10  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,13  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,10  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,27  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,37  </TD>
+          </TR>
+          <TR>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> <IMG SRC="labimg/Image471.gif" WIDTH=24 HEIGHT=30>  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,02  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,07  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,11  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,07  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,07  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,16  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,20  </TD>
+          </TR>
+          <TR>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> <IMG SRC="labimg/Image472.gif" WIDTH=24 HEIGHT=30>  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,04  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,18  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,18  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,30  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,09  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,17  </TD>
+            <TD WIDTH="13%" VALIGN="TOP">   
+              <P ALIGN="CENTER"> 0,10  </TD>
+          </TR>
+        </TABLE>
+     
+        <P></P>
+      
+       
+          <LI>Определить значения <IMG SRC="labimg/Image473.gif" WIDTH=136 HEIGHT=32>
+            и <IMG SRC="labimg/Image474.gif" WIDTH=12 HEIGHT=26>.</LI>
+          <p></P>
+        
+          <LI>Рассчитать значения <IMG SRC="labimg/Image475.gif" WIDTH=36 HEIGHT=30>и
+            <IMG SRC="labimg/Image476.gif" WIDTH=36 HEIGHT=30>
+        </OL>
+       
+        <p></P>
+       
+        <P>Вариант для построения
+          кода определяется по последней цифре пароля. При N&gt;7 номер варианта
+          равен N-7. Если N=0, то вариант 3.</P>
+       
+     
+        <P>&nbsp;</P>
+      
+        <h3>КРАТКАЯ ТЕОРИЯ</h3>
+       
+        <P></P>
+        <P>К числу основных информационных
+          характеристик источника сообщений относятся: количество информации в
+          отдельных сообщениях, энтропия и производительность источника сообщений.
+         </P>
+        <P><I><B>Количество информации.
+          </b></i>Единицей измерения количества информации является <B><I>бит.
+          </i></B>Чем меньше вероятность появления того или иного сообщения, тем
+          большее количество информации извлекается при его получении и наоборот.
+          Если источник может выдавать одно из двух независимых сообщений <IMG SRC="labimg/Image477.gif" WIDTH=76 HEIGHT=28>
+          и первое из них выдается с вероятностью <IMG SRC="labimg/Image478.gif" WIDTH=80 HEIGHT=28>,
+          то интуитивно понятно, что сообщение <IMG SRC="labimg/Image479.gif" WIDTH=20 HEIGHT=28>не
+          несет информации, ибо оно заранее известно получателю. </P>
+        <P>Количество информации,
+          которое приходится на одно сообщение <IMG SRC="labimg/Image480.gif" WIDTH=20 HEIGHT=29><I>,
+          </I>определяется выражением </P>
+        <P><IMG SRC="labimg/Image481.gif" WIDTH=286 HEIGHT=58>
+          <IMG SRC="labimg/Image482.gif" WIDTH=124 HEIGHT=61>.</P>
+        <br>
+     
+       
+        <p> <I><B>Среднее количество
+          информации в сообщениях </b></i>поступающих от источника<I>,</I> называется
+          <B><I>энтропией Н(А)</i></B>. Она определяется путем усреднения значений
+          <IMG SRC="labimg/Image483.gif" WIDTH=45 HEIGHT=29> по всему объему алфавита
+          и для источника без памяти [1] равна</P>
+        <p> <IMG SRC="labimg/Image484.gif" WIDTH=234 HEIGHT=53>.
+          <IMG SRC="labimg/Image482.gif" WIDTH=124 HEIGHT=61>, (1) </P>
+        <p> где <IMG SRC="labimg/Image485.gif" WIDTH=21 HEIGHT=20>-
+          объем алфавита А передаваемых сообщений. </P>
+        <p> <B>Э<I>нтропия </i></b><I>–
+          </I>это мера неопределенности в поведении источника сообщений (ИС).
+          Она равна нулю, если с вероятностью равной единице источником выдается
+          всегда одно и то же сообщение (в этом случае неопределенность в поведении
+          ИС отсутствует). Энтропия максимальна, если сообщения выдаваемые источником
+          появляются независимо и с одинаковой вероятностью. В этом случае она
+          равна <IMG SRC="labimg/Image486.gif" WIDTH=60 HEIGHT=28>.  </P>
+        <p> </P>
+        <p> Среднее количество информации,
+          выдаваемое источником в единицу времени, называют производительностью
+          источника и определяют по формуле:  </P>
+        <p> <IMG SRC="labimg/Image487.gif" WIDTH=129 HEIGHT=53>
+          <IMG SRC="labimg/Image488.gif" WIDTH=62 HEIGHT=58>, </P>
+        <p> где <I>Т – </I>среднее
+          время, отводимое на передачу одного сообщения.  </P>
+        <p> Выражение для средней длительности
+          сообщения имеет вид </P>
+        <p> <IMG SRC="labimg/Image489.gif" WIDTH=198 HEIGHT=53>,
+           </P>
+        <p> здесь <IMG SRC="labimg/Image490.gif" WIDTH=17 HEIGHT=29>-
+          время передачи <B><I>i</i></B><I>–</I>го сообщения заданного алфавита. </P>
+        
+        <p></P>
+        
+        <p> Сформулируем задачу статистического
+          кодирования, которую часто приходится решать в технике документальной
+          электросвязи. Каждое сообщение <IMG SRC="labimg/Image491.gif" WIDTH=20 HEIGHT=29>
+          алфавита <IMG SRC="labimg/Image492.gif" WIDTH=18 HEIGHT=20> необходимо закодировать,
+          используя двоичный код (символы 1 и 0). При этом выбранный код, <B>во-первых</B>,
+          должен обеспечивать возможность однозначного декодирования, т.е. позволять
+          по принятой последовательности символов “0” и “1” однозначно восстановить
+          переданное сообщение. <B>Во-вторых</B>, на передачу сообщения в среднем
+          должно быть затрачено минимальное число двоичных символов, что позволит
+          передавать за единицу времени максимальное число сообщений. Полученный
+          код можно считать оптимальным. </P>
+        <p></P>
+        <p> <B>Пример 1. </b><I>Пусть
+          <IMG SRC="labimg/Image493.gif" WIDTH=129 HEIGHT=29>. Некоторые возможные коды
+          для букв алфавита А представлены в таблице 2. </i> </P>
+        
+        <p> Таблица 2 </P>
+        
+        <P>
+        
+          <TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=424>
+            <TR>
+              <TD WIDTH="24%" VALIGN="TOP" HEIGHT=36>   
+                <P ALIGN="CENTER"> <IMG SRC="labimg/Image494.gif" WIDTH=18 HEIGHT=20>  </TD>
+              <TD WIDTH="23%" VALIGN="TOP" HEIGHT=36>   
+                <P ALIGN="CENTER"> Код 1  </TD>
+              <TD WIDTH="26%" VALIGN="TOP" HEIGHT=36>   
+                <P ALIGN="CENTER"> Код 2  </TD>
+              <TD WIDTH="26%" VALIGN="TOP" HEIGHT=36>   
+                <P ALIGN="CENTER"> Код 3  </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="24%" VALIGN="TOP" HEIGHT=72>   
+                <P ALIGN="CENTER"> <IMG SRC="labimg/Image495.gif" WIDTH=20 HEIGHT=28> </P>
+                <P ALIGN="CENTER"> <IMG SRC="labimg/Image496.gif" WIDTH=21 HEIGHT=28> </P>
+                <P ALIGN="CENTER"> <IMG SRC="labimg/Image497.gif" WIDTH=21 HEIGHT=29>  </TD>
+              <TD WIDTH="23%" VALIGN="TOP" HEIGHT=72>   
+                <P ALIGN="CENTER"> 1 </P>
+                <P ALIGN="CENTER"> 0 </P>
+                <P ALIGN="CENTER"> 01  </TD>
+              <TD WIDTH="26%" VALIGN="TOP" HEIGHT=72>   
+                <P ALIGN="CENTER"> 01 </P>
+                <P ALIGN="CENTER"> 10 </P>
+                <P ALIGN="CENTER"> 11  </TD>
+              <TD WIDTH="26%" VALIGN="TOP" HEIGHT=72>   
+                <P ALIGN="CENTER"> 0 </P>
+                <P ALIGN="CENTER"> 10 </P>
+                <P ALIGN="CENTER"> 111  </TD>
+            </TR>
+          </TABLE>
+        
+        <p></P>
+      
+        <I>
+        <P> Код 1 не является однозначно декодируемым
+          кодом, так как комбинация <IMG SRC="labimg/Image498.gif" WIDTH=22 HEIGHT=28>
+          является начальной частью комбинации <IMG SRC="labimg/Image499.gif" WIDTH=21 HEIGHT=29>.
+          Для доказательства этого рассмотрим, например, двоичную последовательность
+          0101. Она может быть декодирована одним из сообщений: <IMG SRC="labimg/Image500.gif" WIDTH=394 HEIGHT=29><B>.</b> </P>
+        <br>
+        <P> Код 2 декодируется однозначно, поскольку
+          все кодовые комбинации этого кода имеют равные длины и различны.  </P>
+        <P> Код 3 также однозначно декодируемый, поскольку
+          никакая его кодовая комбинация не является началом (префиксом) другой
+          кодового слова.  </P>
+        </I>
+        <p> Код, обладающий тем свойством,
+          что никакая более короткая комбинация не является началом другой более
+          длинной комбинации кода, называют <B><I>префиксным.</i></B> Префиксные
+          коды всегда однозначно декодируемы.  </P>
+        <B>
+        <p></P>
+        <p> Кодовое дерево для множества
+          кодовых слов. </P>
+        </B> 
+        <P> <IMG SRC="labimg/Image501.gif" WIDTH=351 HEIGHT=202> </P>
+         
+        <P><B>Рисунок 1</b>. Пример двоичного
+          кодового дерева </P>
+       <br>
+        <p> Наглядное графическое изображение
+          множества кодовых комбинаций можно получить, установив соответствие
+          между сообщениями и концевыми узлами двоичного дерева. Пример двоичного
+          кодового дерева изображен на рисунке 1.  </P>
+        <p> Две ветви, идущие от корня
+          дерева к узлам первого порядка, соответствуют выбору между “0” и “1”
+          в качестве первого двоичного символа кодовой комбинации: левая ветвь
+          соответствует “0”, а правая – “1”. Две ветви, идущие из узлов первого
+          порядка, соответствуют второму символу кодовых комбинаций, левая означает
+          “0”, а правая – “1” и т. д. Ясно, что последовательность символов каждой
+          кодовой комбинации определяет необходимые правила продвижения от корня
+          дерева до концевого узла, соответствующего рассматриваемому сообщению.
+           </P>
+        <p> Формально кодовые комбинации
+          могут быть приписаны также промежуточным узлам. Например, промежуточному
+          узлу второго порядка на рисунке 1 можно приписать комбинацию 11, которая
+          соответствует первым двум символам кодовых комбинаций, соответствующих
+          концевым узлам, порождаемых этим узлом. Однако кодовые комбинации, соответствующие
+          промежуточным узлам, не могут быть использованы для представления сообщений,
+          так как в этом случае нарушается требование префиксности кода.  </P>
+        <p> Требование, чтобы только
+          концевые узлы сопоставлялись сообщениям, и обеспечивает условие при
+          котором ни одна из кодовых комбинаций не совпадает с началом (префиксом)
+          более длинной кодовой комбинации. Любой код, кодовые комбинации которого
+          соответствуют различным концевым вершинам некоторого двоичного дерева,
+          является префиксным, т. е. однозначно декодируемым.  </P>
+        <p> На рисунке 2 изображены
+          кодовые деревья, соответствующие кодам 2 и 3 (см. таблицу 2).  </P>
+        
+        <P> <IMG SRC="labimg/Image502.gif" WIDTH=322 HEIGHT=173> </P>
+        
+        <P>Рисунок 2 - Кодовые деревья
+          для кодов 2 (а) и 3 (б) </P>
+        <br>
+        <P> Вернемся к рассмотренному ранее примеру
+          1. Пусть вероятность появления сообщения <IMG SRC="labimg/Image466.gif" WIDTH=21 HEIGHT=30>
+          равна 0,2; сообщения <IMG SRC="labimg/Image503.gif" WIDTH=24 HEIGHT=30> &#45;
+          0,3; <IMG SRC="labimg/Image504.gif" WIDTH=22 HEIGHT=30> – 0,5. Тогда среднее
+          число двоичных символов <IMG SRC="labimg/Image505.gif" WIDTH=12 HEIGHT=26>,
+          приходящихся на одно сообщение </P>
+        <P> для кода 3, составляет <IMG SRC="labimg/Image506.gif" WIDTH=253 HEIGHT=30>,
+           </P>
+        <P> а для кода 2 &#45;   <IMG SRC="labimg/Image507.gif" WIDTH=258 HEIGHT=30>,
+           </P>
+        <P> т. е. код 2 в среднем экономичнее кода
+          3.  </P>
+        <p> Рассмотрим еще один код
+          – код 4, который сообщению <IMG SRC="labimg/Image508.gif" WIDTH=21 HEIGHT=30>ставит
+          в соответствие 10; <IMG SRC="labimg/Image509.gif" WIDTH=22 HEIGHT=28><I> –
+          </I>11; <IMG SRC="labimg/Image510.gif" WIDTH=21 HEIGHT=29> – 0. Среднее число
+          двоичных символов, приходящихся на одно сообщение этого кода: <IMG SRC="labimg/Image511.gif" WIDTH=250 HEIGHT=30>,
+          т. е. код 4 экономичнее и кода 3, и кода 2. Спрашивается, можно ли предложить
+          код, который будет экономичнее кода 4? Как построить самый экономичный
+          код для данного источника сообщений? Ответы на эти и многие другие вопросы
+          дает основная теорема кодирования, сформулированная и доказанная впервые
+          К. Шенноном для дискретного канала связи без помех. </P>
+        <p></P>
+        <p> Известно, что нельзя закодировать
+          сообщение двоичным кодом таким образом, чтобы средняя длина кодовых
+          комбинаций <IMG SRC="labimg/Image505.gif" WIDTH=12 HEIGHT=26> была меньше,
+          чем величина энтропии источника сообщений, т.е. <IMG SRC="labimg/Image512.gif" WIDTH=78 HEIGHT=30> </P>
+        <p> В [1] показано, что существует
+          способ кодирования, при котором  </P>
+        <P> <IMG SRC="labimg/Image513.gif" WIDTH=112 HEIGHT=30>, </P>
+        <p> где <IMG SRC="labimg/Image514.gif" WIDTH=16 HEIGHT=17>-
+          сколь угодно малая величина. </P>
+        <p></P>
+        <p> <B>Метод Хаффмена. </b>Одним
+          из часто используемых методов эффективного кодирования является так
+          называемый метод Хаффмена. Пусть сообщения входного алфавита <IMG SRC="labimg/Image515.gif" WIDTH=156 HEIGHT=29>
+          имеют соответственно вероятности их появления <IMG SRC="labimg/Image516.gif" WIDTH=93 HEIGHT=29><I>.
+          </i> </P>
+        <p> Тогда алгоритм кодирования
+          Хаффмена состоит в следующем:  </P>
+        <p> 1. Сообщения располагаются
+          в столбец в порядке убывания вероятности их появления. </P>
+        <p> 2. Два самых маловероятных
+          сообщения <IMG SRC="labimg/Image517.gif" WIDTH=37 HEIGHT=28> и <IMG SRC="labimg/Image518.gif" WIDTH=30 HEIGHT=28>
+          объединяем в одно сообщение <IMG SRC="labimg/Image519.gif" WIDTH=14 HEIGHT=22><I>,
+          </I>которое имеет вероятность, равную сумме вероятностей сообщений <IMG SRC="labimg/Image520.gif" WIDTH=68 HEIGHT=28><I>,
+          </I>т. е. <IMG SRC="labimg/Image521.gif" WIDTH=85 HEIGHT=28>. В результате
+          получим сообщения <IMG SRC="labimg/Image522.gif" WIDTH=132 HEIGHT=28>, вероятности
+          которых <IMG SRC="labimg/Image523.gif" WIDTH=238 HEIGHT=28>. Полученные
+          сообщения вновь располагаем в порядке убывания вероятностей.  </P>
+        <p> 3. Повторяем шаги 1 и 2
+          до тех пор, пока не получим единственное сообщение, вероятность которого
+          равна 1. </P>
+        <p> 4. Проводя линии, объединяющие
+          сообщения и образующие последовательные подмножества, получаем дерево,
+          в котором отдельные сообщения являются концевыми узлами. Соответствующие
+          им кодовые комбинации можно определить, приписывая левым ветвям объединения
+          символ “1”, а правым - “0”. <I>Впрочем, понятия “левые” и “правые” ветви
+          в данном случае относительны.</i> </P>
+        <p> Так как в процессе кодирования
+          сообщениям сопоставляются только концевые узлы, полученный код (код
+          Хаффмена) является префиксным и следовательно всегда однозначно декодируемым.
+           </P>
+        <B><I>
+        <p> В данной работе рекомендуется
+          обозначать “1” ветвь идущую от узла в сторону сообщения с большей вероятностью
+          появления. </P>
+        </i></B>
+        <p> Построение кода Хаффмена
+          для восьми сообщений, появляющихся с вероятностями 0,2; 0,2; 0,15; 0,13;
+          0,12; 0,1; 0,07; 0,03, иллюстрируется рисунками 3 и 4.  </P>
+      
+        <P> <IMG SRC="labimg/Image524.gif" WIDTH=543 HEIGHT=332> </P>
+        
+        <P> Рисунок 3 </P>
+        
+        <P>&nbsp;</P>
+        <P> <IMG SRC="labimg/Image525.gif" WIDTH=526 HEIGHT=289> </P>
+      
+        <P> Рисунок 4 Кодовое дерево </P>
+      
+        <P> Из таблицы 4 видно, что полученный код
+          является неравномерным, причем сообщению с максимальной вероятностью
+          появления соответствует минимальная длительность кодовой комбинации
+          (2<IMG SRC="labimg/Image490.gif" WIDTH=17 HEIGHT=29>), а сообщению с минимальной
+          вероятностью – максимальная (4<IMG SRC="labimg/Image490.gif" WIDTH=17 HEIGHT=29>). </P>
+        <P> Таблица 4 </P>
+         
+     
+          <TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=460>
+            <TR>
+              <TD WIDTH="14%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> №  </TD>
+              <TD WIDTH="29%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> Вероятность появления </P>
+                <P ALIGN="CENTER"> сообщения  </TD>
+              <TD WIDTH="27%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> Структура кодовой
+                  комбинации  </TD>
+              <TD WIDTH="31%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> Длительность </P>
+                <P ALIGN="CENTER"> кодовой  </P>
+                <P ALIGN="CENTER"> комбинации  </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="14%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> <IMG SRC="labimg/Image526.gif" WIDTH=20 HEIGHT=28>  </TD>
+              <TD WIDTH="29%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 0,20  </TD>
+              <TD WIDTH="27%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 01  </TD>
+              <TD WIDTH="31%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 2<IMG SRC="labimg/Image490.gif" WIDTH=17 HEIGHT=29>  </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="14%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> <IMG SRC="labimg/Image527.gif" WIDTH=22 HEIGHT=28>  </TD>
+              <TD WIDTH="29%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 0,20  </TD>
+              <TD WIDTH="27%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 111  </TD>
+              <TD WIDTH="31%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 3<IMG SRC="labimg/Image490.gif" WIDTH=17 HEIGHT=29>  </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="14%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> <IMG SRC="labimg/Image528.gif" WIDTH=21 HEIGHT=29>  </TD>
+              <TD WIDTH="29%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 0,15  </TD>
+              <TD WIDTH="27%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 110  </TD>
+              <TD WIDTH="31%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 3<IMG SRC="labimg/Image490.gif" WIDTH=17 HEIGHT=29>  </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="14%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> <IMG SRC="labimg/Image529.gif" WIDTH=22 HEIGHT=28>  </TD>
+              <TD WIDTH="29%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 0,13  </TD>
+              <TD WIDTH="27%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 101  </TD>
+              <TD WIDTH="31%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 3<IMG SRC="labimg/Image490.gif" WIDTH=17 HEIGHT=29>  </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="14%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> <IMG SRC="labimg/Image530.gif" WIDTH=21 HEIGHT=29>  </TD>
+              <TD WIDTH="29%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 0,12  </TD>
+              <TD WIDTH="27%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 100  </TD>
+              <TD WIDTH="31%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 3<IMG SRC="labimg/Image490.gif" WIDTH=17 HEIGHT=29>  </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="14%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> <IMG SRC="labimg/Image531.gif" WIDTH=21 HEIGHT=29>  </TD>
+              <TD WIDTH="29%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 0,10  </TD>
+              <TD WIDTH="27%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 000  </TD>
+              <TD WIDTH="31%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 3<IMG SRC="labimg/Image490.gif" WIDTH=17 HEIGHT=29>  </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="14%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> <IMG SRC="labimg/Image532.gif" WIDTH=22 HEIGHT=29>  </TD>
+              <TD WIDTH="29%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 0,07  </TD>
+              <TD WIDTH="27%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 0011  </TD>
+              <TD WIDTH="31%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 4<IMG SRC="labimg/Image490.gif" WIDTH=17 HEIGHT=29>  </TD>
+            </TR>
+            <TR>
+              <TD WIDTH="14%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> <IMG SRC="labimg/Image533.gif" WIDTH=22 HEIGHT=29>  </TD>
+              <TD WIDTH="29%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 0,03  </TD>
+              <TD WIDTH="27%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 0010  </TD>
+              <TD WIDTH="31%" VALIGN="TOP">   
+                <P ALIGN="CENTER"> 4<IMG SRC="labimg/Image490.gif" WIDTH=17 HEIGHT=29>  </TD>
+            </TR>
+          </TABLE>
+       
+        <p></P>
+          
+        <p></P>
+        <p> Пусть переданная последовательность
+          сообщений <IMG SRC="labimg/Image534.gif" WIDTH=129 HEIGHT=29> отображается
+          двоичной последовательностью </P>
+        <p> 0 1 1 1 1 1 1 0 1 0 1 0
+          0 1 0… (2) </P>
+        <p> Рассмотрим влияние одиночной
+          ошибки во втором разряде принятой кодовой последовательности на результат
+          декодирования. При этом получим </P>
+        <p> 0 0 1 1 1 1 1 0 1 0 1 0
+          0 1 0… (3) </P>
+        <p> Полученная последовательность
+          расшифровывается следующим образом </P>
+        <p> 0 0 11 1 1 1 0 1 0 1 0
+          0 1 0… <IMG SRC="labimg/Image535.gif" WIDTH=128 HEIGHT=29> (4) </P>
+        <p></P>
+        <p> Из (4) видно, что искажение
+          даже одного двоичного элемента (0 &#174; 1) может привести к появлению
+          ошибок в нескольких сообщениях (треку ошибок). Это является существенным
+          недостатком рассмотренного метода кодирования. </P>
+        <p></P>
+        <p> Среднее число двоичных
+          символов <IMG SRC="labimg/Image536.gif" WIDTH=12 HEIGHT=29> на одно сообщение
+          алфавита объемом <IMG SRC="labimg/Image537.gif" WIDTH=24 HEIGHT=22>, для неравномерных
+          двоичных кодов, определяется выражением </P>
+        <p> <IMG SRC="labimg/Image538.gif" WIDTH=116 HEIGHT=53>. </P>
+        <p> Эффективность неравномерных
+          кодов оценивается следующими параметрами: </P>
+        <UL>
+          <p>
+          <LI> коэффициентом статистического сжатия,
+            который характеризует уменьшение числа двоичных символов на знак при
+            применении методов эффективного кодирования по сравнению с применением
+            равномерного кода; </LI>
+          <p></P>
+        </UL>
+        <p></P>
+           
+        <p> <IMG SRC="labimg/Image539.gif" WIDTH=88 HEIGHT=54>, </P>
+         
+        <p> где <IMG SRC="labimg/Image540.gif" WIDTH=32 HEIGHT=30>-
+          средняя длина кодовой комбинации при равномерном кодировании, </P>
+        <p> – коэффициентом относительной
+          эффективности, который показывает степень близости средней длины кодовой
+          комбинации к теоретически возможному пределу <IMG SRC="labimg/Image541.gif" WIDTH=50 HEIGHT=28>. </P>
+        <p> <IMG SRC="labimg/Image542.gif" WIDTH=104 HEIGHT=53>. </P>
+        <p></P>
+        <P>&nbsp;</P>
+        <B>
+        <P> ОПИСАНИЕ ЛАБОРАТОРНОЙ РАБОТЫ </P>
+        </B>
+        <p></P>
+        <p> &#9;Настоящая лабораторная
+          работа выполняется на ЭВМ. Используемая программа эмулирует работу системы
+          связи, использующей равномерное и неравномерное кодирование. </P>
+        <p> &#9;Программным путем эмулируются
+          такие устройства как: </P>
+        <p> – блок ввода сообщения; </P>
+        <p> – блок равномерного кодирования; </P>
+        <p> – кодер Хаффмена; </P>
+        <p> – блок определения длины
+          кодовой комбинации; </P>
+        <p> – блок ввода ошибки; </P>
+        <p> – декодер Хаффмена; </P>
+        <p> – блок определения ошибочных
+          сообщений; </P>
+        <p> – блок отображения. </P>
+        <p> Функциональная схема моделируемой
+          системы связи представлена на рисунке 5. </P>
+           
+        <P> <IMG SRC="labimg/Image543.gif" WIDTH=482 HEIGHT=261> </P>
+           
+        <P> Рисунок 5 </P>
+        <P></P>
+        <p> При помощи данной программы
+          возможно наблюдение таких процессов, как кодирование исходной последовательности
+          сообщений (см. таблицу 1) кодером Хаффмена и блоком равномерного кодирования,
+          внесение ошибки в закодированную последовательность сообщений, наблюдение
+          трека ошибок и др. </P>
+        <p> Программа производит контроль
+          правильности выполнения студентами домашнего задания.  </P>
+        <p> Для выбора необходимого
+          блока надо щелкнуть по его символьному обозначению левой клавишей мыши. </P>
+        <B>
+        <P> Назначение эмулируемых блоков </P>
+        </B><U>
+        <p> Блок ввода сообщений </P>
+        </U>
+        <p> Этот блок обеспечивает
+          ввод исходной последовательности сообщений. Вводимая последовательность
+          может состоять из сообщений алфавита таблицы 1 или из букв русского
+          алфавита (набираемых на клавиатуре). </P>
+        <p> После окончания ввода сообщения
+          следует нажать клавишу “Enter” или щелкнуть курсором мыши по клавише
+          “OK”. </P>
+        <U>
+        <p> Блок равномерного кодирования </P>
+        </U>
+        <p> В этом блоке Вы можете
+          наблюдать исходную последовательность сообщений, закодированную равномерным
+          кодом. </P>
+        <U>
+        <p> Кодер Хаффмена </P>
+        </U>
+        <p> В этом блоке Вы можете
+          наблюдать Вашу исходную последовательность сообщений, закодированную
+          с использованием неравномерного префиксного кода Хаффмена. </P>
+        <U>
+        <p> Блок определения длины
+          кодовой комбинации. </P>
+        </U>
+        <p> В этом блоке производится
+          отображение длины Вашего закодированного сообщения и средней длины кодовой
+          комбинации для случаев равномерного кодирования и кодирования кодом
+          Хаффмена. </P>
+        <U>
+        <p> Блок ввода ошибки </P>
+        </U>
+        <p> Этот блок позволяет вносить
+          одиночную или групповую ошибку в поток данных, что имитирует ошибки
+          в реальных дискретных каналах и демонстрирует эффект трека ошибок. </P>
+        <p> Для внесения ошибки необходимо
+          щелкнуть на нужных ярлычках, которые отображают номер искажаемого двоичного
+          символа и произвести инверсию. </P>
+        <U>
+        <p> Декодер Хаффмена </P>
+        </U>
+        <p> Этот блок производит декодирование
+          закодированного сообщения, при этом отображается восстановленное сообщение
+          на выходе декодера. </P>
+        <U>
+        <p> Блок определения ошибочных
+          сообщений </P>
+        </U>
+        <p> В этом блоке происходит
+          сравнение последовательности двоичных элементов, переданных в линию
+          связи, с принятой последовательностью. Ошибочные элементы отображаются
+          красным цветом. </P>
+        <U>
+        <p> Блок отображения </P>
+        </U>
+        <p> В этом блоке происходит
+          отображение принятого сообщения, а также выводятся характеристики качества
+          передачи: количество ошибочно принятых двоичных элементов и сообщений. </P>
+        <p></P>
+        <B>
+        <P> ПОРЯДОК ВЫПОЛНЕНИЯ ЛАБОРАТОРНОЙ
+          РАБОТЫ </P>
+        <P></P>
+        </B>
+        
+          <B>
+         
+          <p>1. Проверка результатов расчетов домашнего
+            задания. </p>
+          <p></P>
+          </b>
+          <p> В окне “Контроль домашних
+            расчетов” ввести номер варианта домашнего задания, двоичные последовательности
+            для каждого сообщения источника, значения <IMG SRC="labimg/Image473.gif" WIDTH=136 HEIGHT=32>
+            и <IMG SRC="labimg/Image474.gif" WIDTH=12 HEIGHT=26>. <B><I>Внимание!</i></B>
+            <B><I>При вводе расчетных значений следует обеспечить точность расчетов
+            до второго знака после запятой.</i></b> </P>
+          <p></P>
+          <B>
+          
+          <p>2. Определение средней длины сообщения
+            при передаче последовательностей, составленных из сообщений, имеющих
+            разную вероятность появления. </p>
+          <p></P>
+          </b>
+       
+        <p> 2.1 Открыть окно блока
+          ввода сообщения щелчком мыши. </P>
+        <p> 2.2 В раскрывающемся списке
+          верхней строки выбрать “алфавит из домашнего задания”. </P>
+        <p> 2.3 Составить три последовательности
+          по 16 сообщений исходного алфавита (см. таблицу 1), полученные: </P>
+       
+        <UL>
+          <p>
+          <LI> чередованием двух наиболее вероятных
+            сообщений </LI>
+          <p></P>
+        </UL>
+        
+        <p> (<I>например, для варианта
+          1 </I><IMG SRC="labimg/Image544.gif" WIDTH=208 HEIGHT=32>); </P>
+        
+        <UL>
+          <p>
+          <LI> повторением сообщения алфавита, вероятность
+            появления которого равна или наиболее близка к <IMG SRC="labimg/Image545.gif" WIDTH=72 HEIGHT=57>,
+            где <IMG SRC="labimg/Image537.gif" WIDTH=24 HEIGHT=22> – объем алфавита источника
+            (<I>например, для варианта 1</I> <IMG SRC="labimg/Image546.gif" WIDTH=148 HEIGHT=29>); </LI>
+          <p></P>
+          <p>
+          <LI> повторением сообщения алфавита, вероятность
+            появления которого минимальна (<I>например, для варианта 1 <IMG SRC="labimg/Image547.gif" WIDTH=150 HEIGHT=29></i> ).
+        </UL>
+       
+        <p></P>
+      
+        <p> 2.4 Ввести соответствующую
+          последовательность в нижнюю строку блока ввода сообщений. Для этого
+          поместить курсор в нижнюю строку и последовательно ввести цифры, соответствующие
+          номерам сообщений.  </P>
+        <p> <I>Например: для последовательности
+          <IMG SRC="labimg/Image548.gif" WIDTH=210 HEIGHT=29>, следует ввести</i> 4545…45 </P>
+        <p> 2.5 В блоке определения
+          длины кодовой комбинации посмотреть для каждой последовательности сообщений
+          среднюю длину кодовой комбинации на сообщение алфавита при равномерном
+          и эффективном кодировании; </P>
+        <p></P>
+      
+        
+          <B>
+         
+         
+          <p></P>
+         
+          <p>3. Исследование влияния одиночной ошибки
+            на результаты декодирования </p>
+          <p></P>
+          </b>
+       
+        
+        <p> 3.1 Составить и ввести
+          произвольную комбинацию из 16 сообщений. </P>
+        <p> 3.2 В окне блока ввода
+          ошибки изменить один из элементов последовательности на противоположный.
+          В данном окне необходимо указать номер элемента, в который нужно ввести
+          ошибку и нажать кнопку “инвертировать”. В соответствующем разряде маски
+          ошибки появится единица. </P>
+        <p> 3.3 Переписать в отчет
+          принятую двоичную последовательность из нижнего поля блока определения
+          ошибочных сообщений и декодировать ее в соответствии с кодовыми комбинациями
+          Вашего варианта. Определить количество неверно принятых сообщений. </P>
+        <p> 3.4 Проверить правильность
+          декодирования, используя данные из блока отображения. </P>
+        <p> 3.5 Установить в блоке
+          ввода сообщения “русский алфавит”. </P>
+        <p> 3.6 Ввести последовательность
+          слов, состоящую из <IMG SRC="labimg/Image549.gif" WIDTH=22 HEIGHT=21> букв
+          русского алфавита, где <IMG SRC="labimg/Image550.gif" WIDTH=65 HEIGHT=21>. </P>
+        <p> 3.7 Посчитать и сравнить
+          количество двоичных символов необходимых для передачи введенного текста
+          при кодировании равномерным кодом и кодом Хаффмена. </P>
+        <p> 3.8 Ввести ошибку в единичный
+          элемент, соответствующий k-ой букве, где k номер варианта домашнего
+          задания. </P>
+        <p> 3.9 Посмотреть как расшифровывается
+          последовательность, содержащая ошибку. Сделать выводы. </P>
+        <P ALIGN="CENTER"></P>
+       <B>
+        <P> КОНТРОЛЬНЫЕ ВОПРОСЫ </P>
+        </B>
+        <P></P>
+        <OL>
+         
+            <LI> Принцип формирования кодовых комбинаций
+              при кодировании методом Хаффмена. </LI>
+            <LI> Как рассчитывается средняя длина кодовой
+              комбинации кода Хаффмена и каково ее минимальное значение? </LI>
+            <LI> В чем состоит свойство префиксности
+              эффективных кодов? </LI>
+            <LI> Количественные показатели эффективности
+              неравномерного кодирования. </LI>
+            <LI> Принцип декодирования последовательности
+              префиксного кода. </LI>
+            <LI> Принципы возникновения трека ошибок
+              при декодировании последовательности кодовых комбинаций префиксного
+              кода. </LI>
+            <p></P>
+          
+        </OL>
+        <p></P>
+        <B>
+        <P> СОДЕРЖАНИЕ ОТЧЕТА </P>
+        </B>
+        <p></P>
+        <OL>
+          <LI> Результаты выполнения домашнего задания. </LI>
+          <LI> Результаты выполнения моделирования. </LI>
+          <LI> Выводы по работе. </LI>
+          <LI> Ответы на контрольные вопросы. </LI>
+        </OL>
+        <B>
+        <P></P>
+        </B>         
+          <B>
+        </B> <B>
+        <P> СПИСОК ЛИТЕРАТУРЫ </P>
+        </b>
+        <p></P>
+       
+        <OL>
+          <LI> Тема 4. Эффективное кодирование. </LI>
+          <LI> Передача дискретных сообщений: Учебник
+            для вузов/ В.П. Шувалов, Н.В. Захарченко, В.О. Шварцман и др.; под.
+            ред. В.П. Шувалова. -М.: Радио и связь,-1990.- 464с. </LI>
+          <LI> Финк Л.М. Теория передачи дискретных
+            сообщений. - М: Сов. радио, 1970. </LI>
+          <LI> Флястер И.И. Эффективное кодирование
+            на примере кода Хаффмена //Методические указания по выполнению лабораторных
+            работ.- М.: МТУСИ, 1991 г. </LI>
+        </OL>
+        <br>
+          
+<br>
+
+ 
+
+
+<br>		
+
+ </div>
+ </div>
+
+ </div>
+ </div>
+ </div>
+
+ <!--Меню навигации-->
+ <div aria-label="..." class = "nav-menu">
+ <ul class="pager background-transition-slow">
+ <li title="Наверх" style = "margin-right:15px; "><a class = "glyphicon glyphicon-menu-up page-scroll" href="#page-top"></a></li>
+ </ul>
+ </div>
+
+ </div>
+ <!-- jQuery -->
+ <script src="../lib/js/jquery.js"></script>
+
+ <!-- Bootstrap Core JavaScript -->
+ <script src="../lib/js/bootstrap.min.js"></script>
+
+ <!-- Scrolling Nav JavaScript -->
+ <script src="../lib/js/jquery.easing.min.js"></script>
+ <script src="../lib/js/scrolling-nav.js"></script>
+
+</body>
+
+</html>
